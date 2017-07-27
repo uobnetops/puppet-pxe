@@ -36,6 +36,16 @@ class pxe::syslinux {
     require => Exec['syslinux_install'],
   }
 
+  file { "${tftp_root}/syslinux32.efi":
+    source  => "${syslinux_dir}efi32/efi/syslinux.efi",
+    require => Exec['syslinux_install'],
+  }
+
+  file { "${tftp_root}/syslinux64.efi":
+    source  => "${syslinux_dir}efi64/efi/syslinux.efi",
+    require => Exec['syslinux_install'],
+  }
+
   file { "${tftp_root}/syslinux/menu.c32":
     source  => "${syslinux_dir}/bios/com32/menu/menu.c32",
     require => Exec['syslinux_install'],
