@@ -37,12 +37,12 @@ class pxe::syslinux {
   }
 
   file { "${tftp_root}/syslinux32.efi":
-    source  => "${syslinux_dir}efi32/efi/syslinux.efi",
+    source  => "${syslinux_dir}/efi32/efi/syslinux.efi",
     require => Exec['syslinux_install'],
   }
 
   file { "${tftp_root}/syslinux64.efi":
-    source  => "${syslinux_dir}efi64/efi/syslinux.efi",
+    source  => "${syslinux_dir}/efi64/efi/syslinux.efi",
     require => Exec['syslinux_install'],
   }
 
