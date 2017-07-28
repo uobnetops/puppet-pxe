@@ -105,4 +105,11 @@ class pxe::syslinux {
     ensure => directory,
   }
 
+  file { "${tftp_root}/efi32":
+    ensure => directory,
+  }
+
+  file { "${tftp_root}/efi64":
+    ensure => directory,
+  }
 }
