@@ -41,8 +41,18 @@ class pxe::syslinux {
     require => Exec['syslinux_install'],
   }
 
+  file { "${tftp_root}/ldlinux.e32":
+    source  => "${syslinux_dir}/efi32/com32/elflink/ldlinux/ldlinux.e32",
+    require => Exec['syslinux_install'],
+  }
+
   file { "${tftp_root}/syslinux64.efi":
     source  => "${syslinux_dir}/efi64/efi/syslinux.efi",
+    require => Exec['syslinux_install'],
+  }
+
+  file { "${tftp_root}/ldlinux.e64":
+    source  => "${syslinux_dir}/efi64/com32/elflink/ldlinux/ldlinux.e64",
     require => Exec['syslinux_install'],
   }
 
