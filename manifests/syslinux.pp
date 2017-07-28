@@ -51,6 +51,11 @@ class pxe::syslinux {
     require => Exec['syslinux_install'],
   }
 
+  file { "${tftp_root}/efi32/libutil.c32":
+    source  => "${syslinux_dir}/efi32/com32/libutil/libutil.c32",
+    require => Exec['syslinux_install'],
+  }
+
   file { "${tftp_root}/efi64/syslinux64.efi":
     source  => "${syslinux_dir}/efi64/efi/syslinux.efi",
     require => Exec['syslinux_install'],
@@ -63,6 +68,11 @@ class pxe::syslinux {
 
   file { "${tftp_root}/efi64/menu.c32":
     source  => "${syslinux_dir}/efi64/com32/menu/menu.c32",
+    require => Exec['syslinux_install'],
+  }
+
+  file { "${tftp_root}/efi64/libutil.c32":
+    source  => "${syslinux_dir}/efi64/com32/libutil/libutil.c32",
     require => Exec['syslinux_install'],
   }
 
