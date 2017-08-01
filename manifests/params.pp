@@ -4,6 +4,6 @@
 #
 class pxe::params {
 
-  $syslinux_archive = 'https://www.kernel.org/pub/linux/utils/boot/syslinux/6.xx/syslinux-6.03.tar.gz'
+  $syslinux_archive = 'https://www.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.gz'
   $syslinux_dir     = '/usr/local/src/syslinux-6.03'
 }
